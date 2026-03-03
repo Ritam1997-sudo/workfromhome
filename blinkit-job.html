@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dark Store Job – Blinkit Kolkata</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --yellow: #ffe000;
+    --black: #0f0f0f;
+    --dark: #1c1c1c;
+    --card: #242424;
+    --text: #f5f5f5;
+    --muted: #aaaaaa;
+    --green: #4cbe6c;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--black);
+    color: var(--text);
+    min-height: 100vh;
+    padding-bottom: 40px;
+  }
+
+  /* Header */
+  .header {
+    background: var(--yellow);
+    color: var(--black);
+    text-align: center;
+    padding: 28px 20px 22px;
+    position: relative;
+  }
+  .no-charge-bar {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 10px;
+  }
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(0,0,0,.1);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+  }
+  .header h1 {
+    font-size: clamp(24px, 6vw, 36px);
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+  }
+  .header .sub {
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 6px;
+    color: #333;
+  }
+
+  /* Salary */
+  .salary-band {
+    background: var(--green);
+    text-align: center;
+    padding: 14px 20px;
+    color: #fff;
+  }
+  .salary-band .amount {
+    font-size: clamp(22px, 6vw, 32px);
+    font-weight: 800;
+    letter-spacing: -0.5px;
+  }
+  .salary-band .sub-text {
+    font-size: 13px;
+    font-weight: 500;
+    opacity: .9;
+    margin-top: 2px;
+  }
+
+  /* Interview alert */
+  .alert-bar {
+    background: #c0392b;
+    color: #fff;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  .container { max-width: 520px; margin: 0 auto; padding: 28px 16px 0; }
+
+  .section-title {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--yellow);
+    margin-bottom: 14px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #333;
+  }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 26px;
+  }
+  .info-card {
+    background: var(--card);
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 14px 16px;
+  }
+  .info-card.full { grid-column: 1 / -1; }
+  .info-card .label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  .info-card .value {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.35;
+  }
+
+  /* Locations list */
+  .locations-box {
+    background: var(--card);
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 26px;
+  }
+  .locations-box .loc-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    padding: 5px 0;
+    border-bottom: 1px solid #2e2e2e;
+  }
+  .locations-box .loc-item:last-child { border-bottom: none; }
+  .dot { width: 8px; height: 8px; background: var(--yellow); border-radius: 50%; flex-shrink: 0; }
+
+  /* Warning note */
+  .warning {
+    background: #2a1f00;
+    border-left: 4px solid var(--yellow);
+    border-radius: 0 10px 10px 0;
+    padding: 12px 16px;
+    font-size: 13px;
+    color: #e0c050;
+    margin-bottom: 26px;
+    line-height: 1.6;
+  }
+
+  /* CTA */
+  .cta {
+    background: var(--dark);
+    border: 1px solid #444;
+    border-radius: 16px;
+    padding: 22px 20px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .cta .hr-name {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  .cta .phone {
+    font-size: clamp(20px, 5vw, 28px);
+    font-weight: 800;
+    color: var(--yellow);
+    margin-bottom: 14px;
+  }
+  .cta-btn {
+    display: inline-block;
+    background: var(--yellow);
+    color: var(--black);
+    font-size: 14px;
+    font-weight: 800;
+    padding: 12px 32px;
+    border-radius: 40px;
+    text-decoration: none;
+    transition: transform .15s;
+  }
+  .cta-btn:hover { transform: scale(1.04); }
+
+  .female-note {
+    text-align: center;
+    font-size: 12px;
+    color: #c0392b;
+    margin-top: 10px;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="no-charge-bar">
+    <span class="tag">✗ No Charges</span>
+    <span class="tag">✓ Free Job</span>
+  </div>
+  <h1>Blinkit Dark Store</h1>
+  <div class="sub">Permanent Inhouse Job · Kolkata · Logistics</div>
+</div>
+
+<div class="salary-band">
+  <div class="amount">₹15,500 – ₹16,000</div>
+  <div class="sub-text">Total Earning incl. ESIC + PF + Bonuses</div>
+</div>
+
+<div class="alert-bar">
+  🗓 Interview Date: 03 March 2026 — Apply Immediately!
+</div>
+
+<div class="container">
+
+  <p class="section-title">Job Details</p>
+
+  <div class="info-grid">
+    <div class="info-card">
+      <div class="label">Company</div>
+      <div class="value">Blinkit (Inhouse)</div>
+    </div>
+    <div class="info-card">
+      <div class="label">Sector</div>
+      <div class="value">Logistics</div>
+    </div>
+    <div class="info-card full">
+      <div class="label">Job Role</div>
+      <div class="value">Packing · Scanning · Shorting</div>
+    </div>
+    <div class="info-card">
+      <div class="label">Qualification</div>
+      <div class="value">Min. 8th / 10th / 12th Pass</div>
+    </div>
+    <div class="info-card">
+      <div class="label">Eligibility</div>
+      <div class="value">Male Only · Age 18 – 36</div>
+    </div>
+  </div>
+
+  <p class="section-title">Locations (Kolkata)</p>
+  <div class="locations-box">
+    <div class="loc-item"><div class="dot"></div>Chingrighata</div>
+    <div class="loc-item"><div class="dot"></div>Jadavpur / Baruipur</div>
+    <div class="loc-item"><div class="dot"></div>Beliaghata</div>
+    <div class="loc-item"><div class="dot"></div>New Howrah</div>
+    <div class="loc-item"><div class="dot"></div>Other areas (Kolkata)</div>
+  </div>
+
+  <div class="warning">
+    ⚠️ Female candidates are <strong>not applicable</strong> for this position. Please do not call.
+  </div>
+
+  <p class="section-title">Apply Now</p>
+  <div class="cta">
+    <div class="hr-name">HR Contact: Alivia Dutta</div>
+    <div class="phone">📱 8637590041</div>
+    <a class="cta-btn" href="https://wa.me/918637590041">WhatsApp to Apply</a>
+    <div class="female-note">⛔ Female Not Applicable — Don't Call</div>
+  </div>
+
+</div>
+</body>
+</html>
