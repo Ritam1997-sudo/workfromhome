@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Field Sales Executive – PhonePe</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Noto+Sans+Bengali:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --purple: #5f259f;
+    --violet: #7b3fc4;
+    --bg: #f7f4fc;
+    --card: #ffffff;
+    --text: #1e1232;
+    --muted: #7a6a95;
+    --accent: #f7c948;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    padding-bottom: 40px;
+  }
+
+  .header {
+    background: linear-gradient(135deg, var(--purple) 0%, #8e44d5 100%);
+    color: #fff;
+    text-align: center;
+    padding: 30px 20px 26px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; left: 0; right: 0;
+    height: 24px;
+    background: var(--bg);
+    clip-path: ellipse(60% 100% at 50% 100%);
+  }
+
+  .urgent-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255,255,255,.18);
+    border: 1px solid rgba(255,255,255,.3);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+  }
+  .header h1 {
+    font-size: clamp(20px, 5vw, 30px);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+  .header .role-label {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--purple);
+    font-weight: 700;
+    font-size: 12px;
+    padding: 3px 12px;
+    border-radius: 20px;
+    margin-top: 6px;
+    letter-spacing: 0.5px;
+  }
+
+  /* Salary */
+  .salary-band {
+    background: var(--accent);
+    text-align: center;
+    padding: 16px 20px 12px;
+    color: var(--purple);
+  }
+  .salary-band .amount {
+    font-size: clamp(22px, 6vw, 34px);
+    font-weight: 800;
+    letter-spacing: -0.5px;
+  }
+  .salary-band .extras {
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 2px;
+    color: #5a3a80;
+  }
+
+  .container { max-width: 520px; margin: 0 auto; padding: 28px 16px 0; }
+
+  .section-title {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--violet);
+    margin-bottom: 14px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #e0d4f5;
+  }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 26px;
+  }
+  .info-card {
+    background: var(--card);
+    border: 1.5px solid #e4d9f7;
+    border-radius: 12px;
+    padding: 14px 16px;
+  }
+  .info-card.full { grid-column: 1 / -1; }
+  .info-card .label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.1px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  .info-card .value {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.35;
+  }
+
+  .highlight-box {
+    background: linear-gradient(135deg, var(--purple), var(--violet));
+    color: #fff;
+    border-radius: 14px;
+    padding: 18px 20px;
+    margin-bottom: 26px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .highlight-box .icon { font-size: 28px; flex-shrink: 0; }
+  .highlight-box .txt { font-size: 14px; line-height: 1.5; }
+  .highlight-box .txt strong { display: block; font-size: 15px; margin-bottom: 2px; }
+
+  .cta {
+    background: var(--purple);
+    border-radius: 16px;
+    padding: 22px 20px;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  .cta .contact-name { font-size: 12px; opacity: .7; margin-bottom: 4px; }
+  .cta .phone {
+    font-size: clamp(18px, 5vw, 26px);
+    font-weight: 800;
+    margin-bottom: 14px;
+  }
+  .cta-btn {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--purple);
+    font-size: 14px;
+    font-weight: 800;
+    padding: 12px 32px;
+    border-radius: 40px;
+    text-decoration: none;
+    transition: transform .15s;
+  }
+  .cta-btn:hover { transform: scale(1.04); }
+
+  .note {
+    text-align: center;
+    font-size: 12px;
+    color: var(--muted);
+    font-family: 'Noto Sans Bengali', sans-serif;
+    line-height: 1.7;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="urgent-tag">🔥 Urgent Recruitment</div>
+  <h1>Field Sales Executive</h1>
+  <div class="role-label">PhonePe · FSE</div>
+</div>
+
+<div class="salary-band">
+  <div class="amount">₹18,000 Fixed Net</div>
+  <div class="extras">+ ₹3,500 T.A &nbsp;|&nbsp; PF + ESI &nbsp;|&nbsp; Kolkata & Non-Kolkata</div>
+</div>
+
+<div class="container">
+
+  <p class="section-title">Job Details</p>
+
+  <div class="info-grid">
+    <div class="info-card full">
+      <div class="label">Location</div>
+      <div class="value">All Districts of West Bengal</div>
+    </div>
+    <div class="info-card">
+      <div class="label">Qualification</div>
+      <div class="value">Min. H.S Pass · Age &lt; 38 yrs</div>
+    </div>
+    <div class="info-card">
+      <div class="label">Experience</div>
+      <div class="value">Fresher &amp; Experienced</div>
+    </div>
+    <div class="info-card full">
+      <div class="label">Job Work</div>
+      <div class="value">Merchant On-boarding &amp; Sound Box Sales</div>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <div class="icon">🏍️</div>
+    <div class="txt">
+      <strong>Bike Mandatory</strong>
+      Own bike / two-wheeler required for field work
+    </div>
+  </div>
+
+  <p class="section-title">Contact &amp; Apply</p>
+  <div class="cta">
+    <div class="contact-name">Contact: Anup Modak</div>
+    <div class="phone">📱 9804559933</div>
+    <a class="cta-btn" href="https://wa.me/919804559933">Send CV on WhatsApp</a>
+  </div>
+
+  <p class="note">ফোন পে-এ জরুরি নিয়োগ চলছে · ফোন পে Sound Box বিক্রি ও ইন্সটলেশন</p>
+
+</div>
+</body>
+</html>
