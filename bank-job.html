@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Urgent Bank Recruitment – Saltlake, Kolkata</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --orange: #f47920;
+    --dark-orange: #d96510;
+    --navy: #1a2a4a;
+    --bg: #f5f7fa;
+    --card: #ffffff;
+    --text: #1a1a2e;
+    --muted: #6b7a99;
+    --green: #27ae60;
+    --light-orange: #fff4eb;
+  }
+
+  body {
+    font-family: 'Manrope', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    padding-bottom: 50px;
+  }
+
+  /* ── TOP ALERT ── */
+  .alert-top {
+    background: #c0392b;
+    color: #fff;
+    text-align: center;
+    padding: 9px 16px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+  }
+
+  /* ── HERO HEADER ── */
+  .header {
+    background: linear-gradient(145deg, var(--navy) 0%, #253d6a 100%);
+    color: #fff;
+    text-align: center;
+    padding: 32px 20px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 200px; height: 200px;
+    border: 40px solid rgba(244,121,32,.15);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; left: 0; right: 0;
+    height: 32px;
+    background: var(--bg);
+    clip-path: ellipse(65% 100% at 50% 100%);
+  }
+
+  .bank-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--orange);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 18px;
+    border-radius: 30px;
+    margin-bottom: 14px;
+  }
+  .bank-tag .dot { width: 6px; height: 6px; background: #fff; border-radius: 50%; animation: blink 1.2s infinite; }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+  .header h1 {
+    font-size: clamp(22px, 5.5vw, 34px);
+    font-weight: 900;
+    line-height: 1.15;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+  }
+  .header h1 span { color: var(--orange); }
+  .header p {
+    font-size: 14px;
+    opacity: .75;
+    margin-top: 4px;
+  }
+
+  .perks-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+  }
+  .perk {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(255,255,255,.1);
+    border: 1px solid rgba(255,255,255,.2);
+    border-radius: 20px;
+    padding: 5px 13px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  /* ── CONTAINER ── */
+  .container { max-width: 540px; margin: 0 auto; padding: 24px 14px 0; }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2.2px;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 14px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #fde0c7;
+  }
+
+  /* ── JOB CARD ── */
+  .job-card {
+    background: var(--card);
+    border-radius: 18px;
+    border: 1.5px solid #eeeeee;
+    overflow: hidden;
+    margin-bottom: 22px;
+    box-shadow: 0 4px 20px rgba(0,0,0,.06);
+  }
+  .job-card-header {
+    background: linear-gradient(135deg, var(--orange), var(--dark-orange));
+    padding: 16px 20px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .job-icon {
+    width: 48px; height: 48px;
+    background: rgba(255,255,255,.2);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+  .job-card-header .title { font-size: 16px; font-weight: 800; line-height: 1.2; }
+  .job-card-header .designation { font-size: 12px; opacity: .82; margin-top: 2px; font-weight: 500; }
+
+  .job-body { padding: 18px 20px 20px; }
+
+  .detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .detail-item { }
+  .detail-item.full { grid-column: 1 / -1; }
+  .detail-item .dl { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); margin-bottom: 3px; }
+  .detail-item .dv { font-size: 14px; font-weight: 700; color: var(--text); line-height: 1.35; }
+
+  .salary-chip {
+    display: inline-block;
+    background: var(--light-orange);
+    border: 1.5px solid #f7c99a;
+    color: var(--dark-orange);
+    font-size: 17px;
+    font-weight: 900;
+    padding: 8px 18px;
+    border-radius: 10px;
+    margin-bottom: 14px;
+    letter-spacing: -0.3px;
+  }
+  .salary-chip span { font-size: 12px; font-weight: 600; display: block; margin-top: 1px; color: #b05a10; }
+
+  .highlight-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+  }
+  .hl-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 20px;
+    background: #eaf7ee;
+    color: var(--green);
+    border: 1px solid #b8e4c5;
+  }
+
+  /* Locations */
+  .loc-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .loc-badge {
+    background: #eef2fb;
+    border: 1px solid #d4ddf5;
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--navy);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .loc-count {
+    background: var(--orange);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .note-box {
+    background: #fff8e1;
+    border-left: 4px solid #f0b429;
+    border-radius: 0 10px 10px 0;
+    padding: 10px 14px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #7a5800;
+    margin-top: 14px;
+    line-height: 1.6;
+  }
+
+  /* ── CTA ── */
+  .cta-card {
+    background: var(--navy);
+    border-radius: 18px;
+    padding: 24px 20px;
+    text-align: center;
+    margin-bottom: 18px;
+  }
+  .cta-card .recruiter { font-size: 12px; color: rgba(255,255,255,.6); margin-bottom: 2px; }
+  .cta-card .recruiter strong { color: rgba(255,255,255,.9); }
+  .cta-card .phone {
+    font-size: clamp(22px, 6vw, 30px);
+    font-weight: 900;
+    color: var(--orange);
+    letter-spacing: 0.5px;
+    margin: 8px 0 18px;
+  }
+  .btn-row {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 14px;
+    font-weight: 800;
+    padding: 12px 26px;
+    border-radius: 40px;
+    text-decoration: none;
+    transition: transform .15s;
+  }
+  .cta-btn:hover { transform: scale(1.04); }
+  .cta-btn.primary { background: var(--orange); color: #fff; }
+  .cta-btn.secondary { background: rgba(255,255,255,.1); color: #fff; border: 1.5px solid rgba(255,255,255,.2); }
+
+  .instruction {
+    font-size: 12px;
+    color: rgba(255,255,255,.55);
+    margin-top: 12px;
+    line-height: 1.6;
+  }
+  .instruction strong { color: rgba(255,255,255,.85); }
+
+  .free-badge {
+    text-align: center;
+    margin-top: 6px;
+  }
+  .free-badge span {
+    display: inline-block;
+    background: var(--green);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 5px 16px;
+    border-radius: 20px;
+  }
+</style>
+</head>
+<body>
+
+<div class="alert-top">🔴 URGENT HIRING · INTERVIEW IN SALT LAKE · APPLY NOW</div>
+
+<div class="header">
+  <div class="bank-tag"><div class="dot"></div> Bank Recruitment</div>
+  <h1>Private Banking<br><span>Jobs in Kolkata</span></h1>
+  <p>Salt Lake &amp; Across Kolkata · No Sales · No Target</p>
+  <div class="perks-row">
+    <div class="perk">🏦 Banking Sector</div>
+    <div class="perk">✓ PF + ESIC</div>
+    <div class="perk">✓ Free Placement</div>
+    <div class="perk">✓ Interview in Saltlake</div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- JOB 1: BACK OFFICE EXECUTIVE -->
+  <p class="section-label">Position 01</p>
+  <div class="job-card">
+    <div class="job-card-header">
+      <div class="job-icon">📂</div>
+      <div>
+        <div class="title">Back Office Executive</div>
+        <div class="designation">Backed · Document Verification Unit</div>
+      </div>
+    </div>
+    <div class="job-body">
+      <div class="salary-chip">
+        Up to ₹17,000 NTH
+        <span>+ PF + ESIC + Other Benefits</span>
+      </div>
+
+      <div class="highlight-row">
+        <div class="hl-tag">✅ No Sales</div>
+        <div class="hl-tag">✅ No Target</div>
+        <div class="hl-tag">👨 Male Only</div>
+      </div>
+
+      <div class="detail-grid">
+        <div class="detail-item">
+          <div class="dl">Qualification</div>
+          <div class="dv">Any Graduate</div>
+        </div>
+        <div class="detail-item">
+          <div class="dl">Experience</div>
+          <div class="dv">Fresher Welcome</div>
+        </div>
+        <div class="detail-item full">
+          <div class="dl">Job Responsibility</div>
+          <div class="dv">File Checking &amp; Document Verification · Good Knowledge in Advanced Excel</div>
+        </div>
+      </div>
+
+      <div class="dl" style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Location &amp; Openings</div>
+      <div class="loc-list">
+        <div class="loc-badge">📍 Saltlake <span class="loc-count">5</span></div>
+      </div>
+
+      <div class="note-box">
+        📎 While applying, mention <strong>"Back Office Executive"</strong> in your message.
+      </div>
+    </div>
+  </div>
+
+  <!-- JOB 2: DOCS BOY -->
+  <p class="section-label">Position 02</p>
+  <div class="job-card">
+    <div class="job-card-header">
+      <div class="job-icon">🛵</div>
+      <div>
+        <div class="title">Docs Boy</div>
+        <div class="designation">Senior Associate · Documents Collection</div>
+      </div>
+    </div>
+    <div class="job-body">
+      <div class="salary-chip">
+        Up to ₹17,000 NTH
+        <span>+ PF + ESIC + Travelling Allowance</span>
+      </div>
+
+      <div class="highlight-row">
+        <div class="hl-tag">✅ No Sales</div>
+        <div class="hl-tag">✅ No Target</div>
+        <div class="hl-tag">👨 Male Only</div>
+        <div class="hl-tag">🏍️ Bike Preferred</div>
+      </div>
+
+      <div class="detail-grid">
+        <div class="detail-item">
+          <div class="dl">Qualification</div>
+          <div class="dv">Any Graduate</div>
+        </div>
+        <div class="detail-item">
+          <div class="dl">Requirement</div>
+          <div class="dv">Bike + Driving Licence Preferred</div>
+        </div>
+      </div>
+
+      <div class="dl" style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Locations &amp; Openings</div>
+      <div class="loc-list">
+        <div class="loc-badge">📍 Saltlake <span class="loc-count">4</span></div>
+        <div class="loc-badge">📍 VIP Road <span class="loc-count">3</span></div>
+        <div class="loc-badge">📍 Ballygunge <span class="loc-count">3</span></div>
+        <div class="loc-badge">📍 Park Street <span class="loc-count">3</span></div>
+        <div class="loc-badge">📍 Alipore <span class="loc-count">3</span></div>
+        <div class="loc-badge">📍 Dalhousie <span class="loc-count">3</span></div>
+      </div>
+
+      <div class="note-box">
+        📎 While applying, mention <strong>"Doc's Boy"</strong> in your message.
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-card">
+    <div class="recruiter">Contact Recruiter: <strong>Samrat Debnath</strong></div>
+    <div class="phone">📱 9883520105</div>
+    <div class="btn-row">
+      <a class="cta-btn primary" href="https://wa.me/919883520105">💬 WhatsApp CV</a>
+      <a class="cta-btn secondary" href="tel:+919883520105">📞 Call Now</a>
+    </div>
+    <div class="instruction">
+      Send your updated resume on WhatsApp.<br>
+      Mention <strong>position name</strong> in your message. HR will call you back.
+    </div>
+  </div>
+
+  <div class="free-badge">
+    <span>✅ 100% Free Job · Free Placement</span>
+  </div>
+
+</div>
+</body>
+</html>
